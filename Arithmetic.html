@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arithmethic</h1>
+    <input id="op1" type="number"/><label>+</label><input id="op2" type="number"/><button onclick="add()">=</button><label id="sum"></label>
+    
+    <script>
+        function add() {
+            let operand1Input = document.getElementById("op1");
+            let operand2Input = document.getElementById("op2");
+            let sum = Number(operand1Input.value) + Number(operand2Input.value);
+            document.getElementById("sum").innerText = sum;
+        }
+    </script>
+</body>
+</html>
