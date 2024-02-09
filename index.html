@@ -44,5 +44,43 @@
             document.getElementById("sub").innerText = sub;
         }
     </script>
+    <p>
+    <section>
+        <input id="muloperand1"/> 
+        <label>*</label>
+        <input id="muloperand2"/>
+        <button onclick="mul()">=</button>
+        <label id="mul"></label>  
+    </section>
+    <script>
+        async function mul() {
+            const muloperand1Input = document.getElementById("muloperand1");
+            const muloperand2Input = document.getElementById("muloperand2");
+            let n = muloperand1Input.value;
+            let m = muloperand2Input.value;
+            const response = await fetch("https://arithmetic-service-aublwill.onrender.com/mul/" + n + "/" + m);
+            const mul = await response.json();
+            document.getElementById("mul").innerText = mul;
+        }
+    </script>
+    <p>
+    <section>
+        <input id="divoperand1"/> 
+        <label>/</label>
+        <input id="divoperand2"/>
+        <button onclick="div()">=</button>
+        <label id="div"></label>  
+    </section>
+    <script>
+        async function div() {
+            const divoperand1Input = document.getElementById("divoperand1");
+            const divoperand2Input = document.getElementById("divoperand2");
+            let n = divoperand1Input.value;
+            let m = divoperand2Input.value;
+            const response = await fetch("https://arithmetic-service-aublwill.onrender.com/div/" + n + "/" + m);
+            const div = await response.json();
+            document.getElementById("div").innerText = div;
+        }
+    </script>
 </body>
 </html>
