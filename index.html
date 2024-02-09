@@ -27,18 +27,18 @@
     </script>
     <p>
     <section>
-        <input id="operand1"/> 
+        <input id="suboperand1"/> 
         <label>-</label>
-        <input id="operand2"/>
+        <input id="suboperand2"/>
         <button onclick="sub()">=</button>
         <label id="sub"></label>  
     </section>
     <script>
         async function sub() {
-            const operand1Input = document.getElementById("operand1");
-            const operand2Input = document.getElementById("operand2");
-            let n = operand1Input.value;
-            let m = operand2Input.value;
+            const suboperand1Input = document.getElementById("suboperand1");
+            const suboperand2Input = document.getElementById("suboperand2");
+            let n = suboperand1Input.value;
+            let m = suboperand2Input.value;
             const response = await fetch("https://arithmetic-service-aublwill.onrender.com/sub/" + n + "/" + m);
             const sub = await response.json();
             document.getElementById("sub").innerText = sub;
