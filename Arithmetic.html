@@ -6,16 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Arithmethic</h1>
-    <input id="op1" type="number"/><label>+</label><input id="op2" type="number"/><button onclick="add()">=</button><label id="sum"></label>
-    
+    <section>
+        <h2>Arithmetic</h2>
+        <input id="operand1"/> 
+        <label>+</label>
+        <input id="operand2"/>
+        <button onclick="add()">=</button>
+        <label id="sum"></label>  
+    </section>
     <script>
         async function add() {
-            const operand1Input = document.getElementById("op1");
-            const operand2Input = document.getElementById("op2");
+            const operand1Input = document.getElementById("operand1");
+            const operand2Input = document.getElementById("operand2");
             let n = operand1Input.value;
             let m = operand2Input.value;
-            const response= await fetch("https://arithmetic-service-aublwill.onrender.com/add/" + n + "/" + m);
+            const response = await fetch("https://arithmetic-service-aublwill.onrender.com/add/" + n + "/" + m);
             const sum = await response.json();
             document.getElementById("sum").innerText = sum;
         }
