@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .column {
+           float: left;
+           width: 50%;
+           padding: 10px;
+           box-sizing: border-box;
+          
+        }
+        .row::after {
+           content: "";
+           clear: both;
+           display: table;
+        }
+     </style>
 </head>
 <body>
+    <div class="row">
+        <div class="column">
     <section>
         <h2>Arithmetic</h2>
         <input id="operand1"/> 
@@ -14,6 +30,7 @@
         <button onclick="add()">=</button>
         <label id="sum"></label>  
     </section>
+        
     <script>
         async function add() {
             const operand1Input = document.getElementById("operand1");
@@ -82,14 +99,19 @@
             document.getElementById("div").innerText = div;
         }
     </script>
+        </div>
     <p>
     <p>
     <section>
+        <div class="column">
+        <h2>Primes</h2>
         <label>Number to check</label>
         <input id="num"/>
         <button onclick="prime()">=</button>
         <label id="ans"></label>  
     </section>
+    </div>
+</div>
     <script>
         async function prime() {
             const num = document.getElementById("num");
