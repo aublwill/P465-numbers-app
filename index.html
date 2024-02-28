@@ -82,5 +82,22 @@
             document.getElementById("div").innerText = div;
         }
     </script>
+    <p>
+    <p>
+    <section>
+        <label>Number to check</label>
+        <input id="num"/>
+        <button onclick="prime()">=</button>
+        <label id="ans"></label>  
+    </section>
+    <script>
+        async function prime() {
+            const num = document.getElementById("num");
+            let n = num.value;
+            const response = await fetch("https://primes-service-aublwill.onrender.com/primes/" + n);
+            const p = await response.json();
+            document.getElementById("ans").innerText = p;
+        }
+    </script>
 </body>
 </html>
